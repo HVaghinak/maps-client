@@ -13,7 +13,7 @@ import { MapComponent } from './map/map.component';
     BrowserModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAkB3Em6zNGulcqg-ZnKkP0u_Q6ubGv8-Y'
+      apiKey: ''
     }),
     HttpClientModule
   ],
