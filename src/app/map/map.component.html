@@ -1,0 +1,29 @@
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)" [zoom]="zoom">
+
+  <agm-marker
+    *ngFor="let location of locations; let i = index"
+    [latitude]="location.latitude"
+    [longitude]="location.longitude"
+    [label]="toStr(location.id)"
+    [markerDraggable]="false">
+
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+
+  </agm-marker>
+
+  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+              [radius]="5000"
+              [fillColor]="'red'"
+              [circleDraggable]="true"
+              [editable]="true">
+  </agm-circle>
+</agm-map>
+
+
+<ul>
+  <li *ngFor="let location of locations" (click)="showOnMap(location)"> {{location.address_name}}</li>
+</ul>
+
+<button (click)="resetAddresses()">Reset Addresses</button>
